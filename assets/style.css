@@ -5,14 +5,14 @@
 
 /* here we set up project specific variables - this way we can keep the style consistent across all pages and elements. You can also create variable names for specific fonts and other elements */
 :root {
-  --white: #ffffff;
-  --black: #000000;
-  --blue: #5899e2;
-  --light-blue: #d6eaff;
-  --green: #9de38c;
-  --purple: #ceaeea;
-  --red: #f22c43;
-  --yellow: #fddd0d;
+  --white: #f7f7f4;
+  --black: #20252b;
+  --blue: #55758c;
+  --light-blue: #e5edf0;
+  --green: #a5b8a4;
+  --purple: #b9adc9;
+  --red: #b66f68;
+  --yellow: #e6d6a8;
   --projectFont: Lexend, Arial, sans-serif;
 }
 
@@ -24,7 +24,12 @@ body {
   margin: 0;
   font-weight: 300;
 }
-
+main {
+  max-width: 1050px;
+  margin: 55px auto;
+  padding: 0 35px;
+  line-height: 1.8;
+}
 /* some of HTML elements come with element specific style, we want to remove it so we can style them ourselves */
 a {
   color: inherit; /* the "inherit" property ensures that the element uses the same style as its parent - an element specific style will overwrite this property*/
@@ -67,7 +72,7 @@ section {
 /* hero banner */
 
 #pageHero {
-  background-image: url("./images/skagen.jpg");
+  background-image: url("./images/Artwork.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -81,9 +86,22 @@ section {
 
 h1 {
   width: 100%;
-  padding: 0;
+  padding: 0 20px;
   align-self: center;
   text-align: center;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -1px;
+  color: var(--black);
+  box-sizing: border-box;
+}
+
+main h2 {
+  font-size: 1.65rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  margin-top: 48px;
+  margin-bottom: 16px;
 }
 
 /* carousel articles */
@@ -204,7 +222,12 @@ main strong {
 }
 
 main img {
-  max-width: 100%;
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  display: block;
+  margin: 35px auto;
+  border-radius: 8px;
 }
 
 .outOfFocusArt {
@@ -229,3 +252,36 @@ main img {
 }
 
 #page_two h2 { color: var(--red); }
+
+.articleLayout {
+  display: grid;
+  grid-template-columns: 1.5fr 0.7fr;
+  gap: 45px;
+  align-items: center;
+  margin: 35px 0;
+}
+
+.articleText {
+  line-height: 1.9;
+}
+
+.articleLayout img {
+  width: 100%;
+  max-width: 260px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 700px) {
+  .articleLayout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .articleLayout img {
+    max-width: 300px;
+  }
+}
